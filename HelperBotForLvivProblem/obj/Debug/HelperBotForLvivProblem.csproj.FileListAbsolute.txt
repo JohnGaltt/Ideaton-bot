@@ -1,0 +1,40 @@
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Bot Application.dll.config
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Bot Application.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Bot Application.pdb
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Autofac.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Chronic.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Microsoft.Bot.Builder.Autofac.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Microsoft.Bot.Builder.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Microsoft.Bot.Connector.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Microsoft.Rest.ClientRuntime.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Microsoft.WindowsAzure.Configuration.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Newtonsoft.Json.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\System.IdentityModel.Tokens.Jwt.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\System.Net.Http.Formatting.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\System.Web.Http.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\System.Web.Http.WebHost.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Autofac.xml
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Microsoft.Bot.Builder.xml
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Microsoft.Bot.Builder.Autofac.xml
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Microsoft.Bot.Connector.xml
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Microsoft.WindowsAzure.Configuration.xml
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\Newtonsoft.Json.xml
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\System.IdentityModel.Tokens.Jwt.xml
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\System.Net.Http.Formatting.xml
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\System.Web.Http.xml
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\System.Web.Http.WebHost.xml
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\ar\Microsoft.Bot.Builder.resources.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\cs\Microsoft.Bot.Builder.resources.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\de-dE\Microsoft.Bot.Builder.resources.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\en\Microsoft.Bot.Builder.resources.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\es\Microsoft.Bot.Builder.resources.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\fa\Microsoft.Bot.Builder.resources.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\fr\Microsoft.Bot.Builder.resources.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\ja\Microsoft.Bot.Builder.resources.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\ru\Microsoft.Bot.Builder.resources.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\obj\Debug\HelperBotForLvivProblem.csprojResolveAssemblyReference.cache
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\obj\Debug\Bot Application.dll
+c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\obj\Debug\Bot Application.pdb
