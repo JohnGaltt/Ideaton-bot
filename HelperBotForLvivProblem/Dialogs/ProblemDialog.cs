@@ -269,8 +269,7 @@ namespace HelperBotForLvivProblem.Dialogs
             await context.PostAsync(reply);
             context.Wait(FormEndRecivedAsync);
         }
-        
-
+  
         private async Task FormEndRecivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
@@ -295,7 +294,6 @@ namespace HelperBotForLvivProblem.Dialogs
             else if (activity.Text.Contains("перезаповнити"))
             {
                 await context.PostAsync("щоб продовжити роботу напишіть перезаповнити!");
-
                 context.Wait(MessegeRecivedAsync);
             }
             else

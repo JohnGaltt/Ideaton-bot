@@ -7,6 +7,7 @@ using Microsoft.Bot.Connector;
 using System.Collections.Generic;
 using HelperBotForLvivProblem.Dialogs;
 using HelperBotForLvivProblem.Models;
+using Newtonsoft.Json;
 
 namespace HelperBotForLvivProblem
 {
@@ -34,9 +35,11 @@ namespace HelperBotForLvivProblem
         public string Get()
         {
             string str = "";
+            Order order = new Order();
             foreach (var item in ProblemDialog.list)
             {
-                str = item.Adress + " " + item.DescriptionOfOrder + " " + item.Email + " " + item.LvivRegion + " " + item.PohneNumber + " " + item._TypeOrder;
+                //str = item.Adress + " ," + item.DescriptionOfOrder + " ," + item.Email + " ," + item.LvivRegion + " ," + item.PohneNumber + " ," + item._TypeOrder;
+                str = JsonConvert.SerializeObject(item);
             }
             return str;
         }
