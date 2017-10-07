@@ -14,17 +14,24 @@ namespace HelperBotForLvivProblem.Models
 
         public string Location { get; set; }
 
+        public string PohneNumber { get; set; }
+
         public string Adress { get; set; }
 
         public string Email { get; set; }
 
-        public TypeOrder _TypeOrder { get; set; }
+        public string DescriptionOfOrder { get; set; }
+
+        public string _TypeOrder { get; set; }
+
+        public string LvivRegion { get; set; }
     }
     [Serializable]
     public enum TypeOrder
     {
         HomeTruble,
         DTP,
-        Traffic
+        Traffic,
+        SomethingElse
     }
 }
