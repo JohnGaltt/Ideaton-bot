@@ -12,9 +12,18 @@ namespace HelperBotForLvivProblem.Dialogs
     [Serializable]
     public class ProblemDialog : IDialog<object>
     {
-        private Order orderform = new Order();
-        private string _ordertype { get; set; }
+        public static List<Order> list = new List<Order>();
+
+        private Order order1 = new Order();
+        
+        public string _ordertype { get; set; }
         private string _regionoflviv { get; set; }
+        private string _title { get; set; }
+        private string _location { get; set; }
+        private string _pohneNumber { get; set; }
+        private string _adress { get; set; }
+        private string _email { get; set; }
+        public string _descriptionOfOrder { get; set; }
 
         public async Task StartAsync(IDialogContext context)
         {
@@ -141,27 +150,27 @@ namespace HelperBotForLvivProblem.Dialogs
         private async Task FormRecivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
-            orderform.DescriptionOfOrder = activity.Text;
+            _descriptionOfOrder = activity.Text;
 
-            await context.PostAsync($"У вас: { orderform.DescriptionOfOrder}.Тепер напишіть свою електрону пошту.");
+            await context.PostAsync($"У вас: { _descriptionOfOrder }.Тепер напишіть свою електрону пошту.");
             context.Wait(FormMeilRecivedAsync);
         }
 
         private async Task FormMeilRecivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
-            orderform.Email = activity.Text;
+            _email = activity.Text;
 
-            await context.PostAsync($"Ваша пошта: { orderform.Email}.Тепер напишіть свій мобільний номер.");
+            await context.PostAsync($"Ваша пошта: { _email}.Тепер напишіть свій мобільний номер.");
             context.Wait(FormPhoneRecivedAsync);
         }
 
         private async Task FormPhoneRecivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
-            orderform.PohneNumber = activity.Text;
+            _pohneNumber = activity.Text;
 
-            await context.PostAsync($"Ваша мобільний номер: { orderform.PohneNumber}.Виберіть пункт вибрати автоматичну локацію чи вказати адресу.Якщо ви згідні то напишіть так.");
+            await context.PostAsync($"Ваша мобільний номер: { _pohneNumber}.Виберіть пункт вибрати автоматичну локацію чи вказати адресу.Якщо ви згідні то напишіть так.");
             context.Wait(FormPlaceRecivedAsync);
         }
 
@@ -227,7 +236,7 @@ namespace HelperBotForLvivProblem.Dialogs
         private async Task FormPlaceDressPartRecivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
-            orderform.Adress = activity.Text;
+            _adress = activity.Text;
 
             var reply = activity.CreateReply();
             reply.Attachments = new List<Attachment>();
@@ -250,7 +259,7 @@ namespace HelperBotForLvivProblem.Dialogs
             }
             HeroCard hc = new HeroCard()
             {
-                Subtitle = $"Тип: {_ordertype.ToString()}. \nАдреса: {orderform.Adress}. \nВаш номер: {orderform.PohneNumber}. \nВаш опис: {orderform.DescriptionOfOrder}. \nВаш район: {_regionoflviv.ToString()}",
+                Subtitle = $"Тип: {_ordertype.ToString()}. \nАдреса: {_adress}. \nВаш номер: {_pohneNumber}. \nВаш опис: {_descriptionOfOrder}. \nВаш район: {_regionoflviv.ToString()}",
                 Buttons = cardButtons,
                 Title = "Виберіть" //I mean you know whay this property do
             };
@@ -260,6 +269,7 @@ namespace HelperBotForLvivProblem.Dialogs
             await context.PostAsync(reply);
             context.Wait(FormEndRecivedAsync);
         }
+        
 
         private async Task FormEndRecivedAsync(IDialogContext context, IAwaitable<object> result)
         {
@@ -267,6 +277,18 @@ namespace HelperBotForLvivProblem.Dialogs
 
             if (activity.Text.Contains("відправити"))
             {
+                order1 = new Order();
+                order1._TypeOrder = _ordertype;
+                order1.LvivRegion = _regionoflviv;
+                order1.Adress = _adress;
+                order1.DescriptionOfOrder = _descriptionOfOrder;
+                order1.Email = _email;
+                //order1.Location = _location;
+                order1.PohneNumber = _pohneNumber;
+
+                list.Add(order1);
+
+                //order1.Title = _title;
                 await context.PostAsync("Дякую)");
                 context.Wait(FormEndRecivedAsync);
             }
@@ -278,10 +300,9 @@ namespace HelperBotForLvivProblem.Dialogs
             }
             else
             {
-                await context.PostAsync("Незрозумів ввиберіть будь-ласка ще раз");
+                await context.PostAsync("Незрозумів виберіть будь-ласка ще раз");
                 context.Wait(FormPlaceDressPartRecivedAsync);
             }
         }
-
     }
 }

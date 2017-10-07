@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using System.Collections.Generic;
+using HelperBotForLvivProblem.Dialogs;
+using HelperBotForLvivProblem.Models;
 
 namespace HelperBotForLvivProblem
 {
@@ -18,7 +21,7 @@ namespace HelperBotForLvivProblem
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.ProblemDialog());
+                await Conversation.SendAsync(activity, () => new ProblemDialog());
             }
             else
             {
@@ -26,6 +29,16 @@ namespace HelperBotForLvivProblem
             }
             var response = Request.CreateResponse(HttpStatusCode.OK);
             return response;
+        }
+
+        public string Get()
+        {
+            string str = "";
+            foreach (var item in ProblemDialog.list)
+            {
+                str = item.Adress + " " + item.DescriptionOfOrder + " " + item.Email + " " + item.LvivRegion + " " + item.PohneNumber + " " + item._TypeOrder;
+            }
+            return str;
         }
 
         private Activity HandleSystemMessage(Activity message)

@@ -38,3 +38,7 @@ c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\Hel
 c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\obj\Debug\HelperBotForLvivProblem.csprojResolveAssemblyReference.cache
 c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\obj\Debug\Bot Application.dll
 c:\users\fight\documents\visual studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\obj\Debug\Bot Application.pdb
+C:\Users\fight\Documents\Visual Studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\EntityFramework.dll
+C:\Users\fight\Documents\Visual Studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\EntityFramework.SqlServer.dll
+C:\Users\fight\Documents\Visual Studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\EntityFramework.xml
+C:\Users\fight\Documents\Visual Studio 2017\Projects\HelperBotForLvivProblem\HelperBotForLvivProblem\bin\EntityFramework.SqlServer.xml
