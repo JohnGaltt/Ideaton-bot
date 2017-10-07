@@ -118,7 +118,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HelpMethods\HelperMethods.cs" />
-    <Compile Include="HelpMethods\NumberGuesserDialog.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
