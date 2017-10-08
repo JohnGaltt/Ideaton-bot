@@ -25,6 +25,13 @@ namespace HelperBotForLvivProblem.Models
         public string _TypeOrder { get; set; }
 
         public string LvivRegion { get; set; }
+
+        //public int Fib(int i)
+        //{
+        //    if (i < 1)
+        //        return 1;
+        //    return Fib(i - 1) + Fib(i - 2);
+        //}
     }
     [Serializable]
     public enum TypeOrder
