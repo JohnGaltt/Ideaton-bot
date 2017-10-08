@@ -38,7 +38,6 @@ namespace HelperBotForLvivProblem
             Order order = new Order();
             foreach (var item in ProblemDialog.list)
             {
-                //str = item.Adress + " ," + item.DescriptionOfOrder + " ," + item.Email + " ," + item.LvivRegion + " ," + item.PohneNumber + " ," + item._TypeOrder;
                 str = JsonConvert.SerializeObject(item);
             }
             return str;

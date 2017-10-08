@@ -27,7 +27,7 @@ namespace HelperBotForLvivProblem.Dialogs
 
         public async Task StartAsync(IDialogContext context)
         {
-            await context.PostAsync("Привіт я бот який допоможе вирішити вашу проблему завповніть форму.");
+            await context.PostAsync("Привіт я бот який допоможе вирішити вашу проблему.Завповніть форму.");
             context.Wait(RegionRecivedAsync);
         }
 
@@ -162,27 +162,28 @@ namespace HelperBotForLvivProblem.Dialogs
             _email = activity.Text;
 
             await context.PostAsync($"Ваша пошта: { _email}.Тепер напишіть свій мобільний номер.");
-            context.Wait(FormPhoneRecivedAsync);
-        }
-
-        private async Task FormPhoneRecivedAsync(IDialogContext context, IAwaitable<object> result)
-        {
-            var activity = await result as Activity;
-            _pohneNumber = activity.Text;
-
-            await context.PostAsync($"Ваша мобільний номер: { _pohneNumber}.Виберіть пункт вибрати автоматичну локацію чи вказати адресу.Якщо ви згідні то напишіть так.");
             context.Wait(FormPlaceRecivedAsync);
         }
+
+        //private async Task FormPhoneRecivedAsync(IDialogContext context, IAwaitable<object> result)
+        //{
+        //    var activity = await result as Activity;
+        //    _pohneNumber = activity.Text;
+
+        //    await context.PostAsync($"Ваша мобільний номер: { _pohneNumber}.Виберіть пункт вибрати автоматичну локацію чи вказати адресу.Якщо ви згідні то напишіть так.");
+        //    context.Wait(FormPlaceRecivedAsync);
+        //}
 
         private async Task FormPlaceRecivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             List<CardAction> cardButtons;
 
             var activity = await result as Activity;
+            _pohneNumber = activity.Text;
             var reply = activity.CreateReply();
             reply.Attachments = new List<Attachment>();
 
-            string[] locattionstring = { "автоматично визначити", "вкзати адрес" };
+            string[] locattionstring = { "автоматично визначити", "вказати адрес" };
 
             //if (activity.Text.StartsWith("так"))
             //{
@@ -203,7 +204,7 @@ namespace HelperBotForLvivProblem.Dialogs
                 HeroCard hc = new HeroCard()
                 {
                     Buttons = cardButtons,
-                    Title = "Виберіть" //I mean you know whay this property do
+                    Title = "Виберіть як визначити ваш адрес: " //I mean you know whay this property do
                 };
 
                 reply.Attachments.Add(hc.ToAttachment());
@@ -218,12 +219,12 @@ namespace HelperBotForLvivProblem.Dialogs
             if (activity.Text.Contains("автоматично визначити"))
             {
                 await context.PostAsync("Ваша локаці: ");
-                context.Wait(FormPlaceSecondPartRecivedAsync);
+                context.Wait(FormSendRecivedAsync);
             }
-            else if(activity.Text.Contains("вкзати адрес"))
+            else if(activity.Text.Contains("вказати адрес"))
             {
                 await context.PostAsync("Напишіть будь-ласка адресу.");
-                context.Wait(FormPlaceDressPartRecivedAsync);
+                context.Wait(FormSendRecivedAsync);
             }
             else
             {
@@ -233,10 +234,47 @@ namespace HelperBotForLvivProblem.Dialogs
 
         }
 
-        private async Task FormPlaceDressPartRecivedAsync(IDialogContext context, IAwaitable<object> result)
+        private async Task FormSendRecivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
             _adress = activity.Text;
+
+            var reply = activity.CreateReply();
+            reply.Attachments = new List<Attachment>();
+
+            string[] yesorno = { "google", "з нашої почти." };
+
+            List<CardAction> cardButtons = new List<CardAction>();
+
+            CardAction cd;
+
+            for (int i = 0; i < yesorno.Length; i++)
+            {
+                cd = new CardAction
+                {
+                    Title = yesorno[i],
+                    Value = yesorno[i]
+                };
+
+                cardButtons.Add(cd);
+            }
+            HeroCard hc = new HeroCard()
+            {
+                Buttons = cardButtons,
+                Title = "Виберіть:",
+                Subtitle = "Авторизуйтесь за допомогою акаунта google або ми відправим дані з нашої почти."
+            };
+
+            reply.Attachments.Add(hc.ToAttachment());
+
+            await context.PostAsync(reply);
+            context.Wait(FormPlaceDressPartRecivedAsync);
+        }
+
+        private async Task FormPlaceDressPartRecivedAsync(IDialogContext context, IAwaitable<object> result)
+        {
+            var activity = await result as Activity;
+            string feedback = activity.Text;
 
             var reply = activity.CreateReply();
             reply.Attachments = new List<Attachment>();
@@ -269,7 +307,7 @@ namespace HelperBotForLvivProblem.Dialogs
             await context.PostAsync(reply);
             context.Wait(FormEndRecivedAsync);
         }
-  
+
         private async Task FormEndRecivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
@@ -288,7 +326,7 @@ namespace HelperBotForLvivProblem.Dialogs
                 list.Add(order1);
 
                 //order1.Title = _title;
-                await context.PostAsync("Дякую)");
+                await context.PostAsync("Дякую. Відповідь прийде вам на почту або вам зателефонують.");
                 context.Wait(FormEndRecivedAsync);
             }
             else if (activity.Text.Contains("перезаповнити"))
